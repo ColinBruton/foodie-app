@@ -1,13 +1,22 @@
-@import "tailwindcss";
+/* Import Tailwind layers correctly */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
+/* Custom CSS Variables for your theme colors */
 :root {
+  --white-grey: #F3E9DC;
+  --light-brown: #D96F32;
+  --dark-brown: #C75D2C;
+  --tan: #F8B259;
+
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: var(--dark-brown);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -15,28 +24,32 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Remove display:flex & place-items from body — let React manage layout */
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: var(--dark-brown);
+}
+
+/* Links */
 a {
   font-weight: 500;
-  color: #646cff;
+  color: var(--tan);
   text-decoration: inherit;
 }
 a:hover {
-  color: #535bf2;
+  color: var(--light-brown);
 }
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
+/* Headings */
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+  color: var(--white-grey);
 }
 
+/* Buttons */
 button {
   border-radius: 8px;
   border: 1px solid transparent;
@@ -47,24 +60,27 @@ button {
   background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
+  color: var(--white-grey);
 }
 button:hover {
-  border-color: #646cff;
+  border-color: var(--tan);
 }
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+/* Light mode overrides */
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
-    background-color: #ffffff;
+    background-color: var(--white-grey);
   }
   a:hover {
-    color: #747bff;
+    color: var(--light-brown);
   }
   button {
     background-color: #f9f9f9;
+    color: #213547;
   }
 }

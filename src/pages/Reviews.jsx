@@ -1,7 +1,14 @@
-export default function Suggestions() {
+import Layout from "../components/Layout";
+
+export default function Reviews() {
   return (
-    <div className="flex items-center justify-center h-full bg-yellow-50">
-      <h1 className="text-4xl font-bold text-yellow-700">Suggestions Page</h1>
-    </div>
+    <Layout>
+      <div className="min-h-screen flex items-center justify-center bg-lightBrown">
+        <h1 className="text-4xl font-bold text-white">
+          Reviews Page
+        </h1>
+      </div>
+    </Layout>
   );
 }
+

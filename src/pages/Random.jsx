@@ -1,7 +1,13 @@
+import Layout from "../components/Layout";
+
 export default function Random() {
   return (
-    <div className="flex items-center justify-center h-full bg-purple-50">
-      <h1 className="text-4xl font-bold text-purple-700">Random Page</h1>
-    </div>
+    <Layout>
+      <div className="min-h-screen flex items-center justify-center bg-darkBrown">
+        <h1 className="text-4xl font-bold text-tan">
+          Random Page
+        </h1>
+      </div>
+    </Layout>
   );
 }
