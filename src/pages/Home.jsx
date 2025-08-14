@@ -1,6 +1,8 @@
 import Layout from "../components/Layout";
 import backgroundImage from "../assets/foodie1.jpg";
 import { useEffect, useState } from "react";
+import RestaurantOfTheWeek from "../components/RestaurantOfTheWeek";
+
 
 export default function Home() {
   const [fadeIn, setFadeIn] = useState(false);
@@ -11,42 +13,60 @@ export default function Home() {
 
   return (
     <Layout>
-      <div>
-        {/* Top row: two halves side by side, each 60vh tall */}
-        <div className="flex" style={{ height: "60vh" }}>
-          {/* Left half with blurred background */}
+      <div className="w-screen">
+        {/* Hero section */}
+        <div className="relative w-screen h-[50vh] flex items-center justify-center overflow-hidden">
+          
+          {/* Background image with blur via style */}
           <div
             style={{
               backgroundImage: `url(${backgroundImage})`,
-              width: "50vw",
-              height: "60vh",
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-              filter: "blur(2px)"
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              filter: 'blur(4px)', // adjust blur amount here
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              width: '100%',
+              height: '100%',
+              zIndex: 0,
             }}
           ></div>
 
-          {/* Right half with centered content */}
-          <div className="w-1/2 flex justify-center items-center bg-[rgb(243,233,220)]" style={{ height: "60vh" }}>
-            <div className="flex flex-col items-center">
-              <h1 className="text-4xl font-bold text-[rgb(199,93,44)] text-center">
-                Welcome to Quick Bites!
-              </h1>
+          {/* Glass blur panel with text */}
+          <div
+            className={`
+              relative px-8 py-6 bg-white/30 backdrop-blur-md rounded-xl
+              transition-transform duration-1000
+              ${fadeIn ? "motion-preset-slide-right" : "translate-x-[-100%]"}
+              z-10
+            `}
+          >
+            {/* Main heading */}
+            <h1 className="text-[96px] sm:text-[120px] md:text-[160px] font-bold text-white drop-shadow-lg text-center leading-tight">
+              Welcome to Quick Bites!
+            </h1>
 
-              <div className="mt-4 text-[rgb(199,93,44)] text-center ">
-                <p className="text-xl">
-                  Knoxville's One Stop Shop for Food Lovers
-                </p>
-              </div>
-            </div>
+            {/* Subheading */}
+            <p className="mt-4 text-[32px] sm:text-[40px] md:text-[48px] text-white drop-shadow-md text-center">
+              Knoxville’s One Stop Shop for Food Lovers
+            </p>
           </div>
         </div>
 
-        {/* Below both halves: full width container with light orange background */}
-        <div className="w-full" style={{ backgroundColor: "rgb(248, 178, 89)", minHeight: "40vh" }}>
-          {/* You can put any content here or leave empty for just color */}
+        {/* Bottom section */}
+        <div
+          className="w-full flex items-center justify-center"
+          style={{
+            minHeight: "50vh",
+            backgroundColor: "rgb(248, 178, 89)",
+            paddingBottom: "1rem", // controls how low the panel sits
+          }}
+        >
+          <RestaurantOfTheWeek />
         </div>
       </div>
     </Layout>
   );
 }
+
