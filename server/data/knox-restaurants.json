@@ -1,0 +1,117 @@
+{
+  "generatedAt": "2025-08-18T12:00:00Z",
+  "restaurants": [
+    {
+      "id": "jc-holdway",
+      "name": "J.C. Holdway",
+      "cuisine": "New American",
+      "neighborhood": "Downtown",
+      "image": "https://picsum.photos/seed/jcholdway/800/480",
+      "reviews": [
+        { "author": "Emma K", "rating": 5, "text": "Perfectly cooked trout and amazing service.", "createdAt": "2025-08-17T18:24:00Z" },
+        { "author": "Mark L", "rating": 4, "text": "Great cocktails, a little pricey.", "createdAt": "2025-08-15T00:32:00Z" },
+        { "author": "Hannah W", "rating": 5, "text": "Seasonal menu is a win.", "createdAt": "2025-08-07T22:10:00Z" }
+      ]
+    },
+    {
+      "id": "stock-and-barrel",
+      "name": "Stock & Barrel",
+      "cuisine": "Burgers & Whiskey",
+      "neighborhood": "Market Square",
+      "image": "https://picsum.photos/seed/stockbarrel/800/480",
+      "reviews": [
+        { "author": "Chris B", "rating": 5, "text": "PB&J burger sounds weird but slaps.", "createdAt": "2025-08-14T19:05:00Z" },
+        { "author": "Dev G", "rating": 4, "text": "Fries are legit. Busy at dinner.", "createdAt": "2025-08-13T23:41:00Z" },
+        { "author": "Sam R", "rating": 5, "text": "Great bourbon list.", "createdAt": "2025-08-10T17:11:00Z" },
+        { "author": "Alex J", "rating": 5, "text": "Best burger in Knoxville.", "createdAt": "2025-08-17T13:02:00Z" }
+      ]
+    },
+    {
+      "id": "tomato-head",
+      "name": "The Tomato Head (Market Square)",
+      "cuisine": "Pizza & Sandwiches",
+      "neighborhood": "Market Square",
+      "image": "https://picsum.photos/seed/tomatohead/800/480",
+      "reviews": [
+        { "author": "Priya N", "rating": 5, "text": "Fresh toppings & great vegan options.", "createdAt": "2025-08-12T16:40:00Z" },
+        { "author": "Joey P", "rating": 4, "text": "Lively patio, solid pies.", "createdAt": "2025-08-08T21:52:00Z" }
+      ]
+    },
+    {
+      "id": "yassins-falafel-house",
+      "name": "Yassin's Falafel House",
+      "cuisine": "Middle Eastern",
+      "neighborhood": "Downtown",
+      "image": "https://picsum.photos/seed/yassins/800/480",
+      "reviews": [
+        { "author": "Nadia A", "rating": 5, "text": "Falafel is crispy perfection.", "createdAt": "2025-08-18T15:01:00Z" },
+        { "author": "Will M", "rating": 5, "text": "Garlic sauce forever.", "createdAt": "2025-08-16T20:45:00Z" },
+        { "author": "Katie Z", "rating": 4, "text": "Fast, friendly, delicious.", "createdAt": "2025-08-09T12:21:00Z" }
+      ]
+    },
+    {
+      "id": "chivo-taqueria",
+      "name": "Chivo Taqueria",
+      "cuisine": "Tacos & Tequila",
+      "neighborhood": "Gay Street",
+      "image": "https://picsum.photos/seed/chivo/800/480",
+      "reviews": [
+        { "author": "Drew S", "rating": 5, "text": "Korean BBQ taco 🔥", "createdAt": "2025-08-17T02:18:00Z" },
+        { "author": "Lina R", "rating": 4, "text": "Margs & vibes on point.", "createdAt": "2025-08-11T22:29:00Z" }
+      ]
+    },
+    {
+      "id": "calhouns-river",
+      "name": "Calhoun's On The River",
+      "cuisine": "BBQ & American",
+      "neighborhood": "Riverfront",
+      "image": "https://picsum.photos/seed/calhouns/800/480",
+      "reviews": [
+        { "author": "Pat T", "rating": 4, "text": "Views + ribs = yes.", "createdAt": "2025-08-13T18:00:00Z" },
+        { "author": "Renee V", "rating": 3, "text": "Crowded but fun on game days.", "createdAt": "2025-08-06T20:03:00Z" }
+      ]
+    },
+    {
+      "id": "dead-end-bbq",
+      "name": "Dead End BBQ",
+      "cuisine": "Barbecue",
+      "neighborhood": "Kingston Pike",
+      "image": "https://picsum.photos/seed/deadend/800/480",
+      "reviews": [
+        { "author": "Troy J", "rating": 5, "text": "Burnt ends are elite.", "createdAt": "2025-08-15T14:02:00Z" }
+      ]
+    },
+    {
+      "id": "sweet-ps-downtown-dive",
+      "name": "Sweet P's Downtown Dive",
+      "cuisine": "Barbecue",
+      "neighborhood": "Downtown",
+      "image": "https://picsum.photos/seed/sweetps/800/480",
+      "reviews": [
+        { "author": "Meg F", "rating": 5, "text": "Banana pudding finishes the job.", "createdAt": "2025-08-18T16:30:00Z" },
+        { "author": "Owen R", "rating": 4, "text": "Great smoke ring, quick service.", "createdAt": "2025-08-12T13:11:00Z" }
+      ]
+    },
+    {
+      "id": "olibea",
+      "name": "OliBea",
+      "cuisine": "Breakfast & Brunch",
+      "neighborhood": "Old City",
+      "image": "https://picsum.photos/seed/olibea/800/480",
+      "reviews": [
+        { "author": "Sara P", "rating": 5, "text": "Biscuits & jam = weekend ritual.", "createdAt": "2025-08-10T15:45:00Z" }
+      ]
+    },
+    {
+      "id": "balter-beerworks",
+      "name": "Balter Beerworks",
+      "cuisine": "Brewpub",
+      "neighborhood": "Downtown",
+      "image": "https://picsum.photos/seed/balter/800/480",
+      "reviews": [
+        { "author": "Kyle H", "rating": 4, "text": "Patio + house IPA hits.", "createdAt": "2025-08-14T21:33:00Z" },
+        { "author": "Julia C", "rating": 5, "text": "Great brunch too.", "createdAt": "2025-08-09T17:07:00Z" }
+      ]
+    }
+  ]
+}

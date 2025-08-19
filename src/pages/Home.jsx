@@ -1,14 +1,19 @@
 import Layout from "../components/Layout";
 import backgroundImage from "../assets/foodie1.jpg";
 import { useEffect, useState } from "react";
-import RestaurantOfTheWeek from "../components/RestaurantOfTheWeek";
-
 
 export default function Home() {
   const [fadeIn, setFadeIn] = useState(false);
+  const [restaurant, setRestaurant] = useState(null);
 
   useEffect(() => {
     setFadeIn(true);
+
+    // Fetch restaurant of the week from backend
+    fetch("http://localhost:5000/api/restaurant-of-the-week")
+      .then((res) => res.json())
+      .then((data) => setRestaurant(data))
+      .catch((err) => console.error("Error fetching restaurant:", err));
   }, []);
 
   return (
@@ -16,19 +21,18 @@ export default function Home() {
       <div className="w-screen">
         {/* Hero section */}
         <div className="relative w-screen h-[50vh] flex items-center justify-center overflow-hidden">
-          
-          {/* Background image with blur via style */}
+          {/* Background image with blur */}
           <div
             style={{
               backgroundImage: `url(${backgroundImage})`,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-              filter: 'blur(4px)', // adjust blur amount here
-              position: 'absolute',
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              filter: "blur(4px)",
+              position: "absolute",
               top: 0,
               left: 0,
-              width: '100%',
-              height: '100%',
+              width: "100%",
+              height: "100%",
               zIndex: 0,
             }}
           ></div>
@@ -54,19 +58,40 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Bottom section */}
+        {/* Restaurant of the Week Section */}
         <div
           className="w-full flex items-center justify-center"
           style={{
             minHeight: "50vh",
             backgroundColor: "rgb(248, 178, 89)",
-            paddingBottom: "1rem", // controls how low the panel sits
+            paddingBottom: "1rem",
           }}
         >
-          <RestaurantOfTheWeek />
+          {restaurant ? (
+            <div className="w-1/2 bg-[rgb(213,204,194)] rounded-3xl mx-auto h-[80%] flex flex-col items-center justify-center p-12 shadow-lg">
+              <h2 className="text-[36px] md:text-[48px] font-bold text-[rgb(199,93,44)] mb-6 text-center leading-tight">
+                Restaurant of the Week
+              </h2>
+              <p className="text-[20px] md:text-[28px] text-center text-[rgb(199,93,44)] leading-relaxed">
+                Check out Knoxville's featured spot this week:{" "}
+                <span className="font-bold text-[22px] md:text-[30px]">
+                  {restaurant.name}
+                </span>
+              </p>
+              <p className="mt-4 text-[18px] md:text-[22px] text-center text-[rgb(199,93,44)]">
+                {restaurant.description}
+              </p>
+              <p className="mt-2 text-[16px] md:text-[20px] italic text-center text-[rgb(199,93,44)]">
+                📍 {restaurant.address}
+              </p>
+            </div>
+          ) : (
+            <p className="text-xl text-center text-[rgb(199,93,44)]">
+              Loading restaurant of the week...
+            </p>
+          )}
         </div>
       </div>
     </Layout>
   );
 }
-
